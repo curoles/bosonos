@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cmake -D BOSONOS_ARCH=tachy -D CMAKE_C_COMPILER=tachy-gcc -D CMAKE_CXX_COMPILER=tachy-g++ $(dirname ${BASH_SOURCE[0]})/..
