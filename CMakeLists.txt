@@ -12,10 +12,12 @@ project(BOSONOS CXX C ASM)
 option(BOSONOS_ARCH "Target architecture" x86_64)
 #option(USE_XXX "Use XXX to XXX" ON)#OFF
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ffreestanding -static -static-libgcc -Werror -Wall -Wextra -O2")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffreestanding -static -static-libgcc -Werror -Wall -Wextra -std=c++17 -O2")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-nostdlib -Wl,-nolibc -nostartfiles -nodefaultlibs")
+set(CMAKE_C_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -O3")
+set(CMAKE_CXX_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -std=c++17 -O3")
+set(CMAKE_EXE_LINKER_FLAGS "-nodefaultlibs -nostartfiles")
 #set(CMAKE_LINKER ld)
+
+set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 include_directories(${BOSONOS_SOURCE_DIR}/src)
 
@@ -30,5 +32,5 @@ add_subdirectory(src)
 MESSAGE( STATUS "CMAKE_C_COMPILER    : " ${CMAKE_C_COMPILER} )
 MESSAGE( STATUS "CMAKE_CXX_COMPILER  : " ${CMAKE_CXX_COMPILER} )
 #MESSAGE( STATUS "CMAKE_CXX_FLAGS     : " ${CMAKE_CXX_FLAGS} )
-#MESSAGE( STATUS "CMAKE_INSTALL_PREFIX: " ${CMAKE_INSTALL_PREFIX} )
+MESSAGE( STATUS "CMAKE_INSTALL_PREFIX: " ${CMAKE_INSTALL_PREFIX} )
 MESSAGE( STATUS "ARCH                : " ${BOSONOS_ARCH} )

@@ -98,7 +98,7 @@ greeting:
 
 // The string buffer to be displayed.
 banner:
-    .asciz "TacOS\r\n" // asciz puts a 0 byte at the end
+    .asciz "bosonOS\r\n" // asciz puts a 0 byte at the end
 
  
 /*

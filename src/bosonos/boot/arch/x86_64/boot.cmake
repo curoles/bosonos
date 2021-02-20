@@ -1,3 +1,0 @@
-set(BOOT_ASM_FILES
-    ${CMAKE_CURRENT_LIST_DIR}/start.S
-)
