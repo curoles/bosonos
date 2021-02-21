@@ -10,6 +10,7 @@ project(BOSONOS CXX C ASM)
 # of the project as ${BOSONOS_BINARY_DIR}.
 
 option(BOSONOS_ARCH "Target architecture" x86_64)
+option(TOOLCHAIN_PREFIX "Toolchain directory/tool prefix")
 #option(USE_XXX "Use XXX to XXX" ON)#OFF
 
 set(CMAKE_C_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -O2")

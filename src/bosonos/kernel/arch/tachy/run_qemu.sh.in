@@ -1,0 +1,3 @@
+#!/bin/bash
+
+qemu-system-tachy -machine virt -nographic -serial mon:stdio -d in_asm -D qemu.log -kernel install/bin/bosonos_tachy

@@ -19,8 +19,14 @@ set_target_properties(${bosonos_arch} PROPERTIES LINK_DEPENDS ${LINKER_SCRIPT_KE
 add_dependencies(${bosonos_arch} start_boot_${BOSONOS_ARCH})
 set_target_properties(${bosonos_arch} PROPERTIES LINK_FLAGS "-T ${LINKER_SCRIPT_KERNEL} -Wl,--whole-archive,--build-id=none,-nostdlib")
 
+if (TOOLCHAIN_PREFIX)
+    set(OBJCOPY ${TOOLCHAIN_PREFIX}objcopy)
+else()
+    set(OBJCOPY objcopy)
+endif()
+
 add_custom_command(TARGET ${bosonos_arch} POST_BUILD
-    COMMAND objcopy -O binary ${bosonos_arch} ${bosonos_arch}.img
+    COMMAND ${OBJCOPY} -O binary ${bosonos_arch} ${bosonos_arch}.img
     DEPENDS ${bosonos_arch}
     COMMENT "Build Kernel binary image"
 )
