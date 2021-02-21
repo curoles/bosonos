@@ -1,5 +1,5 @@
 add_library(kernel_x86_64 STATIC
-    init.cpp
+    init.cpp #TODO move to boot
 )
 
 configure_file(run_qemu.sh.in run_qemu.sh)

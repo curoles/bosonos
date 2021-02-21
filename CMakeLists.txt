@@ -12,8 +12,8 @@ project(BOSONOS CXX C ASM)
 option(BOSONOS_ARCH "Target architecture" x86_64)
 #option(USE_XXX "Use XXX to XXX" ON)#OFF
 
-set(CMAKE_C_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -O3")
-set(CMAKE_CXX_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -std=c++17 -O3")
+set(CMAKE_C_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -O2")
+set(CMAKE_CXX_FLAGS "-ffreestanding -static -Werror -Wall -Wextra -std=c++17 -O2")
 set(CMAKE_EXE_LINKER_FLAGS "-nodefaultlibs -nostartfiles")
 #set(CMAKE_LINKER ld)
 

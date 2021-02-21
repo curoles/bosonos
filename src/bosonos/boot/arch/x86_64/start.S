@@ -73,7 +73,7 @@ setcs:
     callw bios_curshome           // move cursor home - top:left
     callw greeting                // display a greeting string
 
-    callw x86_init
+    //callw x86_init16
 
     callw _enter_protected_mode
 
