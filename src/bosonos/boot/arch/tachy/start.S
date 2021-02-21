@@ -8,6 +8,8 @@
 
 
 _start:
+    la  sp, :xpcrel36:stack_top
+    nop;nop;
     jsr uart_print_banner
     li  r1, `0x80001000 //`stack_top
     ann sp, r1, 15
